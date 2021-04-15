@@ -1,38 +1,36 @@
 import 'package:coffe_app/services/auth.dart';
 import 'package:flutter/material.dart';
 
-class Sign extends StatefulWidget {
-
+class Registre extends StatefulWidget {
   final Function toggleView ;
-  Sign({Key key, this.toggleView}) : super(key: key);
 
-
+  const Registre({Key key, this.toggleView}) : super(key: key);
   @override
-  _SignState createState() => _SignState();
+  _RegistreState createState() => _RegistreState();
 }
 
-class _SignState extends State<Sign> {
+class _RegistreState extends State<Registre> {
   final AuthService _auth = AuthService();
 
-//text dield state
-  String email = "";
-
-  String password = "";
-
+  //text dield state
+  String email="" ;
+  String password ="" ;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.brown[100],
       appBar: AppBar(
-        title: Text("Sign in to our app"),
+        title: Text("Sign up to our app"),
         backgroundColor: Colors.brown[400],
         elevation: 0.0,
         actions: [
           // ignore: deprecated_member_use
           FlatButton.icon(
-              onPressed: () { widget.toggleView();},
+              onPressed: () {
+                widget.toggleView();
+              },
               icon: Icon(Icons.person),
-              label: Text("Registre"))
+              label: Text("Sign in"))
         ],
       ),
       body: Container(
@@ -47,7 +45,7 @@ class _SignState extends State<Sign> {
                 TextFormField(
                   onChanged: (v) {
                     setState(() {
-                      email = v;
+                      email=v;
                     });
                   },
                 ),
@@ -58,7 +56,7 @@ class _SignState extends State<Sign> {
                   obscureText: true,
                   onChanged: (v) {
                     setState(() {
-                      password = v;
+                      password= v;
                     });
                   },
                 ),
@@ -73,7 +71,7 @@ class _SignState extends State<Sign> {
                   },
                   color: Colors.pink[400],
                   child: Text(
-                    "Sign in",
+                    "Registre",
                     style: TextStyle(color: Colors.white),
                   ),
                 )
