@@ -14,12 +14,15 @@ class CoffeList extends StatefulWidget {
 class _CoffeListState extends State<CoffeList> {
   @override
   Widget build(BuildContext context) {
-    final brews = Provider.of<List<Coffee>>(context);
-  brews.forEach((brew) {
-    print(brew.name);
-    print(brew.sugars);
-    print(brew.strength);
-  });
+    final brews = Provider.of<List<Coffee>>(context)??[];
+    if(brews!=null){
+      brews.forEach((brew) {
+        print(brew.name);
+        print(brew.sugars);
+        print(brew.strength);
+      });
+    }
+
     return ListView.builder(itemCount: brews.length,itemBuilder: (context,index){
       return CoffeTile(brew:brews[index]) ;
 

@@ -50,7 +50,12 @@ class Home extends StatelessWidget {
                 label: Text("Settings"))
           ],
         ),
-        body: CoffeList(),
+        body: Container(
+            decoration: BoxDecoration(
+
+                image:
+                    DecorationImage(fit: BoxFit.fill,image: AssetImage("assets/coffee_bg.png"))),
+            child: CoffeList()),
       ),
     );
   }
