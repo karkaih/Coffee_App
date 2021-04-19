@@ -20,7 +20,7 @@ class DatabaseService {
 //Coffee list from snapshot
   List<Coffee> _coffeeListFromSnapshot(QuerySnapshot snapshot) {
     return snapshot.documents.map((doc) {
-      return Coffee(doc.data["name"] ?? '', doc.data["sugars"] ?? '0',
+      return Coffee(doc.data["name"] ?? '', doc.data["sugar"] ?? '0',
           doc.data["strength"] ?? 0);
     }).toList();
   }
